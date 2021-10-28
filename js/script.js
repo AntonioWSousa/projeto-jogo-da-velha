@@ -1,4 +1,4 @@
-var player = null;
+var player, winner = null;
 var playerSelected = document.getElementById('player-selected');
 var winnerSelected = document.getElementById('winner-selected')
 var square = document.getElementsByClassName;
@@ -6,6 +6,10 @@ var square = document.getElementsByClassName;
 changePlayer('X');
 
 function chooseSquare(id) {
+  if (winner != null) {
+    return;
+  }
+
   var square = document.getElementById(id);
   if (square.innerHTML !== '-') {
     return;
