@@ -108,11 +108,24 @@ function changeColorSquare(square1, square2, square3) {
 }
 
 function checkSequence(square1, square2, square3) {
-  var eigual = false;
+  var isequal = false;
 
   if (square1.innerHTML !== '-' && square1.innerHTML === square2.innerHTML && square2.innerHTML === square3.innerHTML) {
-    eigual = true;
+    isequal = true;
   }
 
-  return eigual;
+  return isequal;
+}
+
+function restart() {
+  winner = null;
+  winnerSelected.innerHTML = '';
+
+  for (i = 1; i <= 9; i++) {
+    var square = document.getElementById(i);
+    square.style.background = '#eeeeee';
+    square.style.color = '#eeeeee';
+    square.innerHTML = '-';
+  }
+  changePlayer('X');
 }
